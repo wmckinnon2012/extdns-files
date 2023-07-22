@@ -10,18 +10,18 @@ zone "tm(TN-DNS-REPLACE).gov" IN {
     type slave;
     file "/var/bind/db.tm(TN-DNS-REPLACE).gov";
     notify yes;
-    masters {(INT-DNS-IP);};
+    masters {10.(TN).2.10;};
 };
 
 zone "rangeexternal.com" IN {
     type master;
     file "/etc/bind/db.rangeexternal.com";
     notify yes;
-    allow-transfer { localhost; (INT-DNS-IP);};
+    allow-transfer { localhost; 10.(TN).2.10;};
 };
 
-zone "10.4.(TN).in-addr.arpa" IN {
+zone "10.(TN).4.10.in-addr.arpa" IN {
     type master;
     file "/etc/bind/db.10";
-    allow-transfer { localhost; (INT-DNS-IP);};
+    allow-transfer { localhost; 10.(TN).2.10;};
 };
