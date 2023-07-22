@@ -1,0 +1,27 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "tm[INT-DNS-REPLACE].gov" IN {
+    type slave;
+    file "/var/bind/db.tm[INT-DNS-REPLACE].gov";
+    notify yes;
+    masters {[INT-DNS-IP];};
+};
+
+zone "rangeexternal.com" IN {
+    type master;
+    file "/etc/bind/db.rangeexternal.com";
+    notify yes;
+    allow-transfer { localhost; [INT-DNS-IP];};
+};
+
+zone "10.4.[INT-DNS-REPLACE].in-addr.arpa" IN {
+    type master;
+    file "/etc/bind/db.10";
+    allow-transfer { localhost; [INT-DNS-IP];};
+};

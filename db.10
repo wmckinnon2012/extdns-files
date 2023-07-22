@@ -1,0 +1,27 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     server.rangeexternal.com root.server.rangeexternal.com. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      server.rangeexternal.com.
+@       IN      PTR     rangeexternal.com.
+server  IN      A       [EXT-DNS-IP]
+host    IN      A       [EXT-DNS-IP]
+client  IN      A       [EXT-DNS-IP]
+www     IN      A       [EXT-DNS-IP]
+10      IN      PTR     server.rangeexternal.com.
+11      IN      PTR     client.rangeexternal.com.
+
+@       IN      NS      ns1.rangeexternal.com.
+ns1     IN      A       [EXT-DNS-IP]
+10      IN      PTR     ns1.rangeexternal.com.
+
+@       IN      MX      10 admin.exmple.com.
+admin   IN      A       [EXT-DNS-IP]
+10      IN      PTR     admin.rangeexternal.com.
