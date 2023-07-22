@@ -6,9 +6,9 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "tm[INT-DNS-REPLACE].gov" IN {
+zone "tm[TN-DNS-REPLACE].gov" IN {
     type slave;
-    file "/var/bind/db.tm[INT-DNS-REPLACE].gov";
+    file "/var/bind/db.tm[TN-DNS-REPLACE].gov";
     notify yes;
     masters {[INT-DNS-IP];};
 };
@@ -20,7 +20,7 @@ zone "rangeexternal.com" IN {
     allow-transfer { localhost; [INT-DNS-IP];};
 };
 
-zone "10.4.[INT-DNS-REPLACE].in-addr.arpa" IN {
+zone "10.4.[TN].in-addr.arpa" IN {
     type master;
     file "/etc/bind/db.10";
     allow-transfer { localhost; [INT-DNS-IP];};
