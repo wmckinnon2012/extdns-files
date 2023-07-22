@@ -11,17 +11,17 @@ $TTL    604800
 ;
 @       IN      NS      server.rangeexternal.com.
 @       IN      PTR     rangeexternal.com.
-server  IN      A       [EXT-DNS-IP]
-host    IN      A       [EXT-DNS-IP]
-client  IN      A       [EXT-DNS-IP]
-www     IN      A       [EXT-DNS-IP]
+server  IN      A       (EXT-DNS-IP)
+host    IN      A       (EXT-DNS-IP)
+client  IN      A       (EXT-DNS-IP)
+www     IN      A       (EXT-DNS-IP)
 10      IN      PTR     server.rangeexternal.com.
 11      IN      PTR     client.rangeexternal.com.
 
 @       IN      NS      ns1.rangeexternal.com.
-ns1     IN      A       [EXT-DNS-IP]
+ns1     IN      A       (EXT-DNS-IP)
 10      IN      PTR     ns1.rangeexternal.com.
 
 @       IN      MX      10 admin.exmple.com.
-admin   IN      A       [EXT-DNS-IP]
+admin   IN      A       (EXT-DNS-IP)
 10      IN      PTR     admin.rangeexternal.com.
